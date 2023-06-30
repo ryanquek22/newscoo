@@ -2,7 +2,7 @@ name: run main.py
 
 on:
     schedule:
-        - cron: '0 0 * * *' #runs every day
+        - cron: '*/10 * * * *' #runs every 10 mins
 
 jobs:
     build:
@@ -10,7 +10,7 @@ jobs:
         steps: 
 
             - name: checkout repo content
-              uses: actions/setup=python@v4
+              uses: actions/setup-python@v4
               with:
                 python-version: '3.11'
 
